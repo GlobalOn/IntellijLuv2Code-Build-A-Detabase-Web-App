@@ -1,4 +1,4 @@
-package com.luv2code.testdb;
+package com.luv2code;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -15,6 +15,8 @@ public class TestJdbc {
             Connection myConn = DriverManager.getConnection(jdbcUrl, user, pass);
 
             System.out.println("Successful connection");
+
+            myConn.close();
 
         } catch (Exception exc) {
             exc.printStackTrace();
