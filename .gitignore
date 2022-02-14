@@ -1,3 +1,4 @@
+# Default ignored files
 /shelf/
 /.idea/workspace.xml
 /.idea
@@ -36,3 +37,6 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 /web/
+/MVC-Demo-Application.iml
+/out/artifacts/MVC_Demo_Application_Web_exploded/index.jsp
+
