@@ -2,8 +2,6 @@ package com.luv2code.Service;
 
 import com.luv2code.DAO.CustomerDAO;
 import com.luv2code.springdemo.entity.Customer;
-import org.hibernate.Session;
-import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -26,5 +24,10 @@ public class CustomerServiceImpl implements CustomerService {
     @Transactional
     public List<Customer> getCustomers() {
         return customerDAO.getCustomers();
+    }
+
+    @Transactional
+    public Customer saveCustomer(Customer customer) {
+        return customerDAO.saveCustomer(customer);
     }
 }
