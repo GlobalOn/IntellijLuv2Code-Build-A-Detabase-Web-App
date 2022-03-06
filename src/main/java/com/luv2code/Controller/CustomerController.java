@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -40,6 +41,18 @@ public class CustomerController {
         Customer newCustomer = new Customer();
 
         theModel.addAttribute("newCustomer", newCustomer);
+
+        return "customer-form";
+    }
+
+    @GetMapping("/showFormForUpdateCustomer")
+    public String showFormForUpdateCustomer(@RequestParam("customerId")Integer id, Model theModel) {
+
+        //Get Customer from the service by Id
+            Customer theCustomer = customerService.getCustomerById(id);
+        //Set Customer as a model attribute to pre-populate the form
+            theModel.addAttribute("newCustomer", theCustomer);
+        //Send over to our form
 
         return "customer-form";
     }

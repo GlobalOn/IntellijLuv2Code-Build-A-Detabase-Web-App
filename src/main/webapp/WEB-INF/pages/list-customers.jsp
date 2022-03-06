@@ -42,10 +42,22 @@ List Customers - coming soon...
 
         </p>
         <th>Email Name</th>
+
+        <p>
+
+        </p>
+        <th>Action</th>
+
       </tr>
 
       <!--Loop over and print our customers -->
       <c:forEach var="tempCustomer" items="${customerList}">
+
+          <!--construct an "update" link with customer id-->
+          <c:url var="updateLink" value="/showFormForUpdateCustomer">
+              <c:param name="customerId" value="${tempCustomer.id}" />
+          </c:url>
+
           <tr>
             <td>
               ${tempCustomer.firstName}
@@ -58,7 +70,13 @@ List Customers - coming soon...
             <td>
               ${tempCustomer.email}
             </td>
+
+              <td>
+                  <!-- Display the update link -->
+                  <a href="${updateLink}">Update</a>
+            </td>
           </tr>
+
       </c:forEach>
 
     </table>
